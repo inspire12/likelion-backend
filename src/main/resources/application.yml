@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: like-lion-sample
+server:
+  port: 8081
