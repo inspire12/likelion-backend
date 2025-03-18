@@ -1,37 +1,37 @@
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--<configuration>-->
-<!--    &lt;!&ndash; 로그파일 저장 경로 &ndash;&gt;-->
-<!--    <appender class="ch.qos.logback.core.ConsoleAppender" name="CONSOLE">-->
-<!--        <layout class="ch.qos.logback.classic.PatternLayout">-->
-<!--            <Pattern>-->
-<!--                %highlight([%-5level]) %cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) : [%thread] %green([%logger:%line]) - %msg%n-->
-<!--            </Pattern>-->
-<!--        </layout>-->
-<!--    </appender>-->
-<!--    &lt;!&ndash; CONSOLE &ndash;&gt;-->
-<!--    <appender class="net.logstash.logback.appender.LogstashTcpSocketAppender" name="logstash">-->
-<!--        <destination>localhost:5000</destination>-->
-<!--        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>-->
-<!--    </appender>-->
-<!--    &lt;!&ndash;     FILE 저장&ndash;&gt;-->
-<!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
-<!--        <file>${LOG_DIR}/application.log</file>-->
-<!--        <layout class="ch.qos.logback.classic.PatternLayout">-->
-<!--            <Pattern>-->
-<!--                %highlight([%-5level]) %cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) : %green([%logger:%line]) - %msg%n-->
-<!--            </Pattern>-->
-<!--        </layout>-->
-<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
-<!--            <fileNamePattern>${LOG_DIR}/application.log.%d{yyyy-MM-dd}</fileNamePattern>-->
-<!--            <maxHistory>10</maxHistory>-->
-<!--        </rollingPolicy>-->
-<!--    </appender>-->
-<!--    <logger level="INFO" name="org.hibernate.SQL"/>-->
-<!--    <property name="LOG_DIR" value="./logs/application-%d{yyyy-MM-dd-HH-mm}.%i.log" />-->
-<!--    <root level="INFO">-->
-<!--        &lt;!&ndash;    <appender-ref ref="FILE" />&ndash;&gt;-->
-<!--        <appender-ref ref="CONSOLE"/>-->
-<!--        <appender-ref ref="FILE"/>-->
-<!--        <appender-ref ref="logstash"/>-->
-<!--    </root>-->
-<!--</configuration>-->
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 로그파일 저장 경로 -->
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="CONSOLE">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %highlight([%-5level]) %cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) : [%thread] %green([%logger:%line]) - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+    <!-- CONSOLE -->
+    <appender class="net.logstash.logback.appender.LogstashTcpSocketAppender" name="logstash">
+        <destination>localhost:5000</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+    <!--     FILE 저장-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/application.log</file>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %highlight([%-5level]) %cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) : %green([%logger:%line]) - %msg%n
+            </Pattern>
+        </layout>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/application.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+    </appender>
+    <logger level="INFO" name="org.hibernate.SQL"/>
+    <property name="LOG_DIR" value="./logs/application-%d{yyyy-MM-dd-HH-mm}.%i.log" />
+    <root level="INFO">
+        <!--    <appender-ref ref="FILE" />-->
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="logstash"/>
+    </root>
+</configuration>
