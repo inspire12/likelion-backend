@@ -15,7 +15,7 @@ public class OrderQueryDslRepository implements OrderRepositoryCustom {
     private final JPAQueryFactory queryFactory;
 
     @Override
-    public Optional<OrderEntity> findQueryDslByOrderId(Long orderId) {
+    public Optional<OrderEntity> findQueryDslById(Long orderId) {
         QOrderEntity orderQuery = QOrderEntity.orderEntity;
         // "select o from OrderEntity o where o.id=:orderId"
         return Optional.ofNullable(queryFactory.selectFrom(orderQuery)
