@@ -18,9 +18,11 @@ public class OrderService {
 //    private final OrderJpaEntityRepository orderJpaEntityRepository;
 
     public OrderResponse getOrderById(Long orderId) {
-
-        OrderEntity orderEntity = orderJpaRepository.findById(orderId)
+        OrderEntity orderEntity = orderJpaRepository.findQueryDslByOrderId(orderId)
                 .orElseThrow(RuntimeException::new);
+
+//        OrderEntity orderEntity = orderJpaRepository.findById(orderId)
+//                .orElseThrow(RuntimeException::new);
 //        OrderEntity orderEntity = orderJpaRepository.findByOrderId(orderId)
 //                .orElseThrow(RuntimeException::new);
 

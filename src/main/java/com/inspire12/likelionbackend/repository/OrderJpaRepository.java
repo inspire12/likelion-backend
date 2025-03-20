@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface OrderJpaRepository extends JpaRepository<OrderEntity, Long> {
+public interface OrderJpaRepository extends JpaRepository<OrderEntity, Long>, OrderRepositoryCustom {
 
     @Query("select o from OrderEntity o where o.id=:orderId")
-    Optional<OrderEntity> findByOrderId(Long orderId);
+    Optional<OrderEntity> findOrderId(Long orderId);
 }
