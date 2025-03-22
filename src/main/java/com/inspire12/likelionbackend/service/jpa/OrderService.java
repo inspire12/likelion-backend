@@ -55,7 +55,7 @@ public class OrderService {
     @Transactional
     public OrderResponse saveOrderByUserId(Long userId) {
 
-        String username = UserContextHolder.getUser();
+        String username = UserContextHolder.getAuthenticatedUsername();
 
         log.info("request save order by userId: {} username: {}", userId, username);
         OrderEntity orderEntity = OrderEntity.builder()

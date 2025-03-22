@@ -1,5 +1,5 @@
 
-package com.inspire12.likelionbackend.config;
+package com.inspire12.likelionbackend.config.core;
 
 import com.inspire12.likelionbackend.interceptor.UserContextInterceptor;
 import org.springframework.context.annotation.Configuration;
