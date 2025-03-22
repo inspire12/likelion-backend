@@ -1,16 +1,16 @@
-FROM curlimages/curl:8.2.1 AS download
-ARG OTEL_AGENT_VERSION="1.32.0"
-RUN curl --silent --fail -L "https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v${OTEL_AGENT_VERSION}/opentelemetry-javaagent.jar" \
-    -o "$HOME/opentelemetry-javaagent.jar"
+FROM eclipse-temurin:21-jdk
 
-FROM maven:3.8.6-openjdk-8 AS build
-ADD . /build
-RUN cd /build && mvn package --quiet -DskipTests
+# vi 설치
+RUN apt-get update && apt-get install -y vim && rm -rf /var/lib/apt/lists/*
 
-FROM openjdk:8-jre-slim
-COPY --from=build /build/target/*.jar /app.jar
-COPY --from=download /home/curl_user/opentelemetry-javaagent.jar /opentelemetry-javaagent.jar
-ENTRYPOINT ["java", \
-  "-javaagent:/opentelemetry-javaagent.jar", \
-  "-jar", "/app.jar" \
-  ]
+#로컬의 파일들이 컨테이너의 /app 경로 안으로 복사됩니다.
+# 이후 명령어는 기본적으로 /app 디렉터리에서 실행됩니다.
+WORKDIR /app
+# 프로젝트 파일 전체 복사
+COPY . .
+
+# Gradle로 빌드 후 Jar 생성
+RUN ./gradlew bootJar --no-daemon
+
+# 빌드된 Jar 파일 실행
+ENTRYPOINT ["java", "-jar", "build/libs/likelion-backend-0.0.1-SNAPSHOT.jar"]
