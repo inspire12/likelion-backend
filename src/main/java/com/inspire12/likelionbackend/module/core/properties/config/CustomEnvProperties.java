@@ -1,4 +1,4 @@
-package com.inspire12.likelionbackend.module.core.properties.config.core;
+package com.inspire12.likelionbackend.module.core.properties.config;
 
 import lombok.Getter;
 import lombok.Setter;

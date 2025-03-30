@@ -49,7 +49,7 @@ sourceSets {
     main.java.srcDirs += [generatedDir]
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.generatedSourceOutputDirectory = file(generatedDir)
 }
 

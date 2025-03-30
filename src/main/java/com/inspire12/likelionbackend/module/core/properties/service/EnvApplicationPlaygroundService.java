@@ -1,7 +1,7 @@
 package com.inspire12.likelionbackend.module.core.properties.service;
 
 import com.inspire12.likelionbackend.module.core.properties.config.ServerPortProperties;
-import com.inspire12.likelionbackend.module.core.properties.config.core.CustomEnvProperties;
+import com.inspire12.likelionbackend.module.core.properties.config.CustomEnvProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
