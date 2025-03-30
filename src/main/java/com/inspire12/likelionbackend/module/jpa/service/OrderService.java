@@ -68,6 +68,12 @@ public class OrderService {
         return new OrderSumResponse(orderSum.getCustomerId(), orderSum.getCount());
     }
 
+
+    public OrderSumResponse getOrderSumQueryDsl(Long customerId) {
+        OrderSum orderSum = orderJpaRepository.sumQueryDslAmountByUserId(customerId);
+        return new OrderSumResponse(orderSum.getCustomerId(), orderSum.getCount());
+    }
+
     public OrderListResponse getOrderByPager(Pageable pageable) {
         Page<OrderEntity> all = orderJpaRepository.findAll(pageable);
         List<OrderResponse> orderResponses = new ArrayList<>();

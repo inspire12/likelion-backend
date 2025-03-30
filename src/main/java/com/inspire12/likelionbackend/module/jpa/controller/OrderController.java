@@ -75,4 +75,9 @@ public class OrderController {
         return ResponseEntity.ok(orderSummaries);
     }
 
+    @GetMapping("/sum/querydsl")
+    public ResponseEntity<OrderSumResponse> getOrderSumQuerydsl(@RequestParam Long customerId) {
+        OrderSumResponse orderSummaries = orderService.getOrderSumQueryDsl(customerId);
+        return ResponseEntity.ok(orderSummaries);
+    }
 }
