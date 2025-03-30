@@ -3,17 +3,12 @@ package com.inspire12.likelionbackend.module.core.thread.service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
-import java.util.concurrent.Executor;
-
-
 
 @RequiredArgsConstructor
 @Service
 public class ThreadService {
-    private final @Qualifier("customThreadPoolExecutor") Executor executor;
+//    private final @Qualifier("customThreadPoolExecutor") Executor executor;
     private final Logger log = LoggerFactory.getLogger(this.getClass().getName());
     private final ThreadAsyncService threadAsyncService;
 
@@ -28,7 +23,7 @@ public class ThreadService {
             }
         };
         for (int i = 0; i < 10; i++) {
-            executor.execute(runnable);
+//            executor.execute(runnable);
         }
     }
 

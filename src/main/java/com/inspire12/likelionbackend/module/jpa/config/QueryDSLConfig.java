@@ -1,4 +1,4 @@
-package com.inspire12.likelionbackend.module.core.properties.config;
+package com.inspire12.likelionbackend.module.jpa.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;

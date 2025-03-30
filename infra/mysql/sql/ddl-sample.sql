@@ -1,24 +1,31 @@
-CREATE DATABASE IF NOT EXISTS `likelion`;
-USE `likelion`;
+CREATE
+DATABASE IF NOT EXISTS `likelion`;
+USE
+`likelion`;
 
 SET NAMES utf8mb4;
 
+-- CREATE TABLE IF NOT EXIST
 DROP TABLE IF EXISTS `orders`;
-CREATE TABLE `orders` (
-                          `created_at` datetime(6) DEFAULT NULL,
-                          `customer_id` bigint DEFAULT NULL,
-                          `delivery_price` bigint DEFAULT NULL,
-                          `id` bigint NOT NULL AUTO_INCREMENT,
-                          `store_id` bigint DEFAULT NULL,
-                          `store_price` bigint DEFAULT NULL,
-                          `total_price` bigint DEFAULT NULL,
-                          `updated_at` datetime(6) DEFAULT NULL,
-                          `order_number` binary(16) DEFAULT NULL,
-                          `delivery_status` enum('APPROVE','BEFORE_PAYMENT','CANCEL','COMPLETE','ING','PENDING') DEFAULT NULL,
-                          `order_status` enum('CANCEL_PAYMENT','FAIL_PAYMENT','PENDING_PAYMENT') DEFAULT NULL,
-                          `order_type` enum('DELIVERY','PICKUP') DEFAULT NULL,
-                          PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE orders (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    customer_id BIGINT NOT NULL,
+    order_number VARCHAR(36) NOT NULL UNIQUE,
+    order_status VARCHAR(20) NOT NULL,
+    total_amount INT NOT NULL,
+    payment_method VARCHAR(20) NOT NULL,
+    delivery_address VARCHAR(255) NOT NULL,
+    request_comment VARCHAR(255),
+    ordered_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
 
+INSERT INTO orders
+(customer_id, order_number, order_status, total_amount, payment_method, delivery_address, request_comment)
+VALUES
+    (1, UUID(), 'ORDERED', 25000, 'CREDIT_CARD', '서울특별시 강남구 테헤란로 123', '빨리 와주세요'),
+    (2, UUID(), 'PREPARING', 15000, 'KAKAO_PAY', '서울특별시 마포구 서교동 456', null);
 
+SELECT * FROM orders;
 
+SELECT * FROM orders WHERE order_status = 'ORDERED';

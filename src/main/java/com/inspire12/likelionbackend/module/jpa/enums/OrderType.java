@@ -1,4 +1,4 @@
-package com.inspire12.likelionbackend.model.entity;
+package com.inspire12.likelionbackend.module.jpa.enums;
 
 import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 

@@ -1,6 +1,6 @@
-package com.inspire12.likelionbackend.repository;
+package com.inspire12.likelionbackend.module.jpa.repository;
 
-import com.inspire12.likelionbackend.model.entity.OrderEntity;
+import com.inspire12.likelionbackend.module.jpa.model.entity.OrderEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
