@@ -1,20 +1,24 @@
 package com.inspire12.likelionbackend.module.core.thread.config;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
 
-//@EnableAsync
-//@Configuration
+@EnableAsync
+@Configuration
 public class ThreadPoolConfig {
     private static final int CORE_POOL_SIZE = 2;
 //    private static final int CORE_POOL_SIZE = 10;
     private static final int MAX_POOL_SIZE = 2;
 //    private static final int MAX_POOL_SIZE = 10;
 
-
-//    @Bean(name = "customThreadPoolExecutor")
+    @Primary
+    @Bean(name = "customThreadPoolExecutor")
     public Executor customThreadPoolExecutor() {
         ThreadPoolTaskExecutor threadPoolExecutor = new ThreadPoolTaskExecutor();
 
