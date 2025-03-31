@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/ioc")
 @RestController
 public class BeanShowController {
-    private final BeanShowService beanShowService = new BeanShowService();
-//
-//    public BeanShowController(BeanShowService beanShowService) {
-//        this.beanShowService = beanShowService;
-//    }
+    private final BeanShowService beanShowService;
+
+    public BeanShowController() {
+        this.beanShowService = new BeanShowService();
+    }
 
     @GetMapping
     public void show() {
