@@ -33,6 +33,7 @@ logging:
   level:
     org.springframework.transaction: TRACE
     org.springframework.orm.jpa: TRACE
+    org.springframework.security: TRACE
 #    org.hibernate.SQL: debug
 
 custom:
