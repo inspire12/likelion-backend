@@ -36,7 +36,13 @@ public class OrderService {
     @Transactional
     public OrderResponse saveOrder(OrderRequest request) {
         OrderEntity order = OrderMapper.toEntity(request);
+        if (order != null) {
+            throw new RuntimeException();
+        }
         OrderEntity savedOrder = orderJpaRepository.save(order);
+        if (order != null) {
+            throw new RuntimeException();
+        }
         return OrderMapper.fromEntity(savedOrder);
     }
 
