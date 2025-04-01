@@ -26,12 +26,15 @@ public interface OrderJpaRepository extends JpaRepository<OrderEntity, Long> {
     @Query("select sum(o.totalAmount) from OrderEntity o where o.customerId=:customerId")
     OrderSum sumAmountByUserId(Long customerId);
 
-    @Query("select o.customerId from OrderEntity o where o.id= :id")
-    Long selectById(Long id);
+    // findById
+    @Query("select o from OrderEntity o where o.id= :id")
+    Optional<OrderEntity> selectById(Long id);
 
+    // update 대체
     @Modifying
     @Query("update OrderEntity o set o.totalAmount=:newAmount where o.id=:id")
-    OrderEntity updateTotalAmountById(Long newAmount);
+    int updateTotalAmountById(Long id, Integer newAmount);
 
-
+    @Query("delete from OrderEntity o where o.id=:id")
+    void deleteJPQLById(Long id);
 }

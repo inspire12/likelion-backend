@@ -21,7 +21,7 @@ public class OrderService {
 
     @Transactional(readOnly = true)
     public OrderResponse getOrder(Long orderId) {
-        OrderEntity order = orderJpaRepository.findById(orderId)
+        OrderEntity order = orderJpaRepository.selectById(orderId)
                 .orElseThrow(() -> new EntityNotFoundException("주문 없음"));
         return OrderMapper.fromEntity(order);
     }
@@ -35,16 +35,18 @@ public class OrderService {
 
     @Transactional
     public void deleteOrder(Long orderId) {
-        OrderEntity order = orderJpaRepository.findById(orderId)
+        OrderEntity order = orderJpaRepository.selectById(orderId)
                 .orElseThrow(() -> new EntityNotFoundException("주문 없음"));
-        orderJpaRepository.delete(order);
+        orderJpaRepository.deleteJPQLById(order.getId());
     }
 
-    @Transactional
+//    @Transactional
     public OrderResponse updateTotalAmount(Long orderId, Integer newAmount) {
-        OrderEntity order = orderJpaRepository.findById(orderId)
+        OrderEntity order = orderJpaRepository.selectById(orderId)
                 .orElseThrow(() -> new EntityNotFoundException("주문 없음"));
-        order.changeTotalAmount(newAmount);
+        if (orderJpaRepository.updateTotalAmountById(orderId, newAmount) == 1) {
+            order.changeTotalAmount(newAmount);
+        };
         return OrderMapper.fromEntity(order);
     }
 
