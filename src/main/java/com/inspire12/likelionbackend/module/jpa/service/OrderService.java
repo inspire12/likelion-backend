@@ -33,16 +33,20 @@ public class OrderService {
         return OrderMapper.fromEntity(order);
     }
 
-    @Transactional
+    @Transactional(rollbackFor = RuntimeException.class
+    )
+//
+//            , noRollbackFor = EntityNotFoundException.class
+//                , transactionManager = "inspire12TransactionMananger")
     public OrderResponse saveOrder(OrderRequest request) {
         OrderEntity order = OrderMapper.toEntity(request);
-        if (order != null) {
-            throw new RuntimeException();
-        }
+//        if (order != null) {
+//            throw new RuntimeException();
+//        }
         OrderEntity savedOrder = orderJpaRepository.save(order);
-        if (order != null) {
-            throw new RuntimeException();
-        }
+//        if (order != null) {
+//            throw new RuntimeException();
+//        }
         return OrderMapper.fromEntity(savedOrder);
     }
 
