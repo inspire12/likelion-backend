@@ -21,7 +21,7 @@ SELECT id, customer_id FROM orders;
 
 SELECT * FROM orders WHERE total_amount > 19000;
 
-SELECT * FROM orders WHERE total_amount > 19000 order by total_ammount limit 10 offset 10;
+SELECT * FROM orders WHERE total_amount > 19000 order by total_amount limit 10 offset 10;
 
 
 UPDATE orders SET total_amount = 25000 WHERE id = 2;
