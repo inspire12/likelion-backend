@@ -26,10 +26,10 @@ spring:
       minimum-idle: 5
       idle-timeout: 30000
       connection-timeout: 20000
-#  data:
-#    web:
-#      pageable:
-#        one-indexed-parameters: true
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:

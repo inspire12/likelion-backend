@@ -13,6 +13,8 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -72,15 +74,14 @@ public class OrderService {
 
 
 
-    public OrderListResponse getOrderByPager(int page, int size, String sortBy, String direction) {
+    public OrderListResponse getOrderByPager(Pageable pageable) {
         /**  TODO **/
-        String jpql = "SELECT o FROM OrderEntity o order by o." + sortBy + " " + direction;
-        List<OrderEntity> resultList = em.createQuery(jpql, OrderEntity.class)
-                .setFirstResult(page * size)
-                .setMaxResults(size)
-                .getResultList();
+        Page<OrderEntity> resultList = orderJpaRepository.findAll(pageable);
+
+        List<OrderEntity> content = resultList.getContent();
+
         List<OrderResponse> orderResponses = new ArrayList<>();
-        for (OrderEntity orderEntity : resultList) {
+        for (OrderEntity orderEntity : content) {
             orderResponses.add(OrderMapper.fromEntity(orderEntity));
         }
         return new OrderListResponse(orderResponses);
