@@ -23,7 +23,7 @@ public interface OrderJpaRepository extends JpaRepository<OrderEntity, Long> {
     List<OrderSummary> findOrderSummariesByCustomerId(@Param("customerId") Long customerId);
 
     // TODO
-    @Query("select sum(o.totalAmount) from OrderEntity o where o.customerId=:customerId")
+    @Query("select new com.inspire12.likelionbackend.module.jpa.model.dto.OrderSum(o.customerId, sum(o.totalAmount)) from OrderEntity o where o.customerId=:customerId")
     OrderSum sumAmountByUserId(Long customerId);
 
     // findById
