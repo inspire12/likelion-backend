@@ -46,7 +46,7 @@ public class OrderService {
                 .orElseThrow(() -> new EntityNotFoundException("주문 없음"));
         if (orderJpaRepository.updateTotalAmountById(orderId, newAmount) == 1) {
             order.changeTotalAmount(newAmount);
-        };
+        }
         return OrderMapper.fromEntity(order);
     }
 
