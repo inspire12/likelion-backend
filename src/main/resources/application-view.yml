@@ -1,0 +1,11 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/      # HTML 파일이 위치하는 디렉토리 경로
+    suffix: .html                      # 파일 확장자 설정
+    mode: HTML                         # HTML5 표준을 따름
+    encoding: UTF-8                    # 템플릿 파일 인코딩 방식
+    cache: false                       # 템플릿 변경 즉시 반영 (개발 환경에선 false 추천)
+
+logging:
+  level:
+    org.thymeleaf: DEBUG               # Thymeleaf 관련 로그 출력 레벨 설정

@@ -11,11 +11,21 @@ server:
 
 
 spring:
+
   datasource:
     url: jdbc:mysql://localhost:3306/likelion?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: likelion
     password: likelion
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 30000
+      connection-timeout: 20000
+#  data:
+#    web:
+#      pageable:
+#        one-indexed-parameters: true
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
@@ -24,6 +34,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
 #  sql:
 #    init:
 #      mode: always
