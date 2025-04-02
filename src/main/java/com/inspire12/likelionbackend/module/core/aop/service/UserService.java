@@ -11,8 +11,8 @@ public class UserService {
 
     private static final Logger log = LoggerFactory.getLogger(UserService.class.getName());
 
-    @LogExecutionTime
     @UserInputValidate
+    @LogExecutionTime
     public void registerUser(String username, String email) { // 변경됨
         log.info("DB에 사용자 저장 로직 실행");
     }
