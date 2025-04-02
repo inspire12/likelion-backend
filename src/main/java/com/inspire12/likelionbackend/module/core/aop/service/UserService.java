@@ -25,6 +25,7 @@ public class UserService {
     private void logEndExecutionTime(String username, long executionTime) {
         log.info("사용자 등록 완료 - username: {} {}", username, executionTime);
     }
+
     private void validateUserInput(String username, String email) {
         // 유효성 검사
         if (username == null || email == null) {
