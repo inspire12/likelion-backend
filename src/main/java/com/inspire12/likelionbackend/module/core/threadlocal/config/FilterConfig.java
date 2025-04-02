@@ -13,7 +13,7 @@ public class FilterConfig {
         FilterRegistrationBean<AuthFilter> registrationBean = new FilterRegistrationBean<>();
 
         registrationBean.setFilter(new AuthFilter());
-        registrationBean.addUrlPatterns("/*"); // 모든 URL에 적용
+        registrationBean.addUrlPatterns("/threadlocal/*"); // 모든 URL에 적용
         registrationBean.setOrder(1);          // 필터 실행 순서 지정 가능
 
         return registrationBean;
