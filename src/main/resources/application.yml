@@ -22,7 +22,7 @@ logging:
 #    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%thread] [%logger{36}] - %msg%n"
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
 #    console: "%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) %highlight(%-5level) %yellow([%thread]) %green(%logger{36}) - %msg%n"
-  config: classpath:logback/logback-spring2.xml
+  config: classpath:logback/logback-spring-logstash.xml
 
 management:
   endpoints:

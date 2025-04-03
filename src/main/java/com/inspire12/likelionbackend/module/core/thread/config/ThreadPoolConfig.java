@@ -8,10 +8,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 //@EnableAsync
 //@Configuration
 public class ThreadPoolConfig {
-    private static final int CORE_POOL_SIZE = 2;
-//    private static final int CORE_POOL_SIZE = 10;
-    private static final int MAX_POOL_SIZE = 2;
-//    private static final int MAX_POOL_SIZE = 10;
+//    private static final int CORE_POOL_SIZE = 2;
+    private static final int CORE_POOL_SIZE = 10;
+//    private static final int MAX_POOL_SIZE = 2;
+    private static final int MAX_POOL_SIZE = 10;
 
 
 //    @Bean(name = "customThreadPoolExecutor")

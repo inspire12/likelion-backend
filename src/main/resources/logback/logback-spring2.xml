@@ -19,7 +19,7 @@
 <!--    </appender>-->
     <!--     FILE 저장-->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_DIR}/application.log</file>
+<!--        <file>${LOG_DIR}/application.log</file>-->
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
                 %highlight([%-5level]) %cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) : %green([%logger:%line]) - %msg%n
