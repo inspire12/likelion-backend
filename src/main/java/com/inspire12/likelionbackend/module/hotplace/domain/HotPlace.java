@@ -17,4 +17,8 @@ public class HotPlace {
     public Integer getRankings(){
         return 1;
     }
+
+    public boolean validate() {
+        return (int)score == score;
+    }
 }

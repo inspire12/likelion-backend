@@ -21,11 +21,6 @@ class HotPlaceTest {
     @Autowired
     private HotPlaceService hotPlaceService;
 
-
-//    @MockitoBean
-    //TODO MockitoBean 을 적용하고 thenReturn 값을 통해 mock으로 값이 대체됐는지 확인
-    private HotPlaceRankingService hotPlaceRankingService;
-
     @Test
     void getRankings() {
     }
@@ -48,11 +43,9 @@ class HotPlaceTest {
         double score = 1.5;
         HotPlace hotPlace = new HotPlace(score);
         // 의미로는 given.. 실행될때 해당 로직을 거치면 함수를 들어가지말고 thenReturn 값을 내보냄
-        when(hotPlaceRankingService.getRankings()).thenReturn(2);
 
         // when 실행
-        boolean validate = hotPlaceService.validate(hotPlace);
-//        boolean validate = hotPlace.validate();
+        boolean validate = hotPlace.validate();
         // then
         assertFalse(validate);
     }
