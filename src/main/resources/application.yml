@@ -28,12 +28,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: '*'
-  metrics:
-    tags:
-      application: app
-    distribution:
-      percentiles-histogram:
-        http:
-          server:
-            requests: 'true'
+        include: "*"  # 필요한 항목만 노출해도 됨
+  endpoint:
+    health:
+      show-details: always
