@@ -3,6 +3,8 @@ package com.inspire12.likelionbackend.module.jpa.repository;
 import com.inspire12.likelionbackend.module.jpa.model.dto.OrderSum;
 import com.inspire12.likelionbackend.module.jpa.model.dto.OrderSummary;
 import com.inspire12.likelionbackend.module.jpa.model.entity.OrderEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -24,4 +26,7 @@ public interface OrderJpaRepository extends JpaRepository<OrderEntity, Long> {
 
     @Query("select new com.inspire12.likelionbackend.module.jpa.model.dto.OrderSum(o.customerId, sum(o.totalAmount)) from OrderEntity o where o.customerId=:customerId")
     OrderSum sumAmountByUserId(Long customerId);
+
+    Page<OrderEntity> findBy(Pageable pageable);
+
 }

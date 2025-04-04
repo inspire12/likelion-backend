@@ -77,4 +77,15 @@ public class OrderService {
         }
         return new OrderListResponse(orderResponses);
     }
+
+    public OrderListResponse getOrderItemsByPager(Pageable pageable) {
+
+        Page<OrderEntity> all = orderJpaRepository.findAll(pageable);
+        List<OrderResponse> orderResponses = new ArrayList<>();
+        for(OrderEntity orderEntity : all) {
+            orderResponses.add(OrderMapper.fromEntity(orderEntity));
+        }
+//        List<OrderResponse> orderResponses = all.stream().map(OrderMapper::fromEntity).toList();
+        return new OrderListResponse(orderResponses);
+    }
 }
