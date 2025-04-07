@@ -26,12 +26,9 @@ public class OrderService {
         Order order = orderRepository.getOrderByCustomerId(orderRequest.customerId());
         // 결제를 요청해 처리하고
         boolean isPaymentSuccess = paymentPort.processPayment(order);
-        // TODO payment 성공 여부에 따라 Order 상태가 변화하는 걸 order 도메인 객체에 옮기자
-        if(isPaymentSuccess) {
-            order.setOrderStatus(OrderStatus.SUCCESS_PAYMENT);
-        } else {
-            order.setOrderStatus(OrderStatus.FAIL_PAYMENT);
-        }
+
+        order.approvePayment(isPaymentSuccess);
+
         return order;
     }
 

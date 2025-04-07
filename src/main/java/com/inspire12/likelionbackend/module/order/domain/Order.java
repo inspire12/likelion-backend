@@ -33,6 +33,11 @@ public class Order {
 
 
     public void approvePayment(boolean isPaymentSuccess) {
-        // TODO
+        // TODO payment 성공 여부에 따라 Order 상태가 변화하는 걸 order 도메인 객체에 옮기자
+        if (isPaymentSuccess) {
+            this.setOrderStatus(OrderStatus.SUCCESS_PAYMENT);
+        } else {
+            this.setOrderStatus(OrderStatus.FAIL_PAYMENT);
+        }
     }
 }
