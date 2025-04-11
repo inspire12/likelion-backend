@@ -1,0 +1,20 @@
+server:
+  port: 8082
+  tomcat:
+    threads:
+      max: 1
+      min-spare: 1
+    max-connections: 1
+    accept-count: 1
+    connection-timeout: 20000
+
+
+spring:
+  application:
+    name: likelion-backend
+
+custom:
+  env: live
+  #  env: ${CUSTOM_ENV:dev}
+
+

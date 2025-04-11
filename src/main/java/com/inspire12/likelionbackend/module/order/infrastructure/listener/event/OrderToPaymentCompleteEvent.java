@@ -2,7 +2,7 @@ package com.inspire12.likelionbackend.module.order.infrastructure.listener.event
 
 
 
-import com.inspire12.likelionbackend.module.order.infrastructure.repository.entity.OrderStatus;
+import com.inspire12.likelionbackend.module.order.domain.constant.OrderStatus;
 
 import java.util.UUID;
 

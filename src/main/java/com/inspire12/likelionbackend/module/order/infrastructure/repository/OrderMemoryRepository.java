@@ -8,7 +8,8 @@ import java.util.UUID;
 
 // TODO JPA 연동 이후 변경 예정
 @Component
-public interface OrderJpaRepository  {
+public interface OrderMemoryRepository {
 
     Order findByOrderNumber(UUID uuid);
+    Order save(Order order);
 }

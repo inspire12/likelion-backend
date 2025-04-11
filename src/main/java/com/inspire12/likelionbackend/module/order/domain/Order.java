@@ -1,22 +1,22 @@
 package com.inspire12.likelionbackend.module.order.domain;
 
-import com.inspire12.likelionbackend.module.order.infrastructure.repository.entity.DeliveryStatus;
-import com.inspire12.likelionbackend.module.order.infrastructure.repository.entity.OrderStatus;
-import com.inspire12.likelionbackend.module.order.infrastructure.repository.entity.OrderType;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.inspire12.likelionbackend.module.order.domain.constant.DeliveryStatus;
+import com.inspire12.likelionbackend.module.order.domain.constant.OrderStatus;
+import com.inspire12.likelionbackend.module.order.domain.constant.OrderType;
+import lombok.*;
 import org.springframework.lang.Nullable;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Builder
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
     private Long id;
 
+    @Setter
     private OrderStatus orderStatus;
 
     private UUID orderNumber;
@@ -40,5 +40,14 @@ public class Order {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+
+    public void approvePayment(boolean isPaymentSuccess) {
+        if (isPaymentSuccess) {
+            this.setOrderStatus(OrderStatus.SUCCESS_PAYMENT);
+        } else {
+            this.setOrderStatus(OrderStatus.FAIL_PAYMENT);
+        }
+    }
 
 }

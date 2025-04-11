@@ -1,10 +1,18 @@
 package com.inspire12.likelionbackend.module.order.application.dto;
 
-import com.inspire12.likelionbackend.module.order.infrastructure.repository.entity.OrderStatus;
+import com.inspire12.likelionbackend.module.order.domain.constant.OrderStatus;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Builder
-public record OrderResponse(UUID orderNumber, OrderStatus orderStatus) {
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class OrderResponse {
+    private UUID orderNumber;
+    private OrderStatus orderStatus;
 }
