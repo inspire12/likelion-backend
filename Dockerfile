@@ -1,16 +1,8 @@
-FROM eclipse-temurin:21-jdk
+#TODO 컨테이너 런타임을 가져온다 (dockerhub에서)
 
-# vi 설치
-RUN apt-get update && apt-get install -y vim && rm -rf /var/lib/apt/lists/*
+#TODO Gradle 빌드 후 jar 생성
 
-#로컬의 파일들이 컨테이너의 /app 경로 안으로 복사됩니다.
-# 이후 명령어는 기본적으로 /app 디렉터리에서 실행됩니다.
-WORKDIR /app
-# 프로젝트 파일 전체 복사
-COPY . .
+#TODO 포트 EXPOSE
 
-# Gradle로 빌드 후 Jar 생성
-RUN ./gradlew bootJar --no-daemon
+#TODO 빌드된 JAR 실행
 
-# 빌드된 Jar 파일 실행
-ENTRYPOINT ["java", "-jar", "build/libs/likelion-backend-0.0.1-SNAPSHOT.jar"]
