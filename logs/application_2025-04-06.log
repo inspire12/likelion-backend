@@ -1,0 +1,57 @@
+[34m[INFO ][0;39m [36m2025-04-06 14:28:04.392[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:53][0;39m - Starting LikeLionSampleApplication using Java 21.0.3 with PID 24995 (/Users/yeonghakseo/Documents/workspace/likelion-project/likelion-backend/build/classes/java/main started by yeonghakseo in /Users/yeonghakseo/Documents/workspace/likelion-project/likelion-backend)
+[34m[INFO ][0;39m [36m2025-04-06 14:28:04.393[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:652][0;39m - No active profile set, falling back to 1 default profile: "default"
+[34m[INFO ][0;39m [36m2025-04-06 14:28:04.908[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.TomcatWebServer:111][0;39m - Tomcat initialized with port 8082 (http)
+[34m[INFO ][0;39m [36m2025-04-06 14:28:04.915[0;39m : [32m[org.apache.coyote.http11.Http11NioProtocol:173][0;39m - Initializing ProtocolHandler ["http-nio-8082"]
+[34m[INFO ][0;39m [36m2025-04-06 14:28:04.916[0;39m : [32m[org.apache.catalina.core.StandardService:173][0;39m - Starting service [Tomcat]
+[34m[INFO ][0;39m [36m2025-04-06 14:28:04.916[0;39m : [32m[org.apache.catalina.core.StandardEngine:173][0;39m - Starting Servlet engine: [Apache Tomcat/10.1.36]
+[34m[INFO ][0;39m [36m2025-04-06 14:28:04.936[0;39m : [32m[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173][0;39m - Initializing Spring embedded WebApplicationContext
+[34m[INFO ][0;39m [36m2025-04-06 14:28:04.936[0;39m : [32m[org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:301][0;39m - Root WebApplicationContext: initialization completed in 515 ms
+[34m[INFO ][0;39m [36m2025-04-06 14:28:05.021[0;39m : [32m[org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping:59][0;39m - Adding welcome page template: index
+[34m[INFO ][0;39m [36m2025-04-06 14:28:05.136[0;39m : [32m[org.apache.coyote.http11.Http11NioProtocol:173][0;39m - Starting ProtocolHandler ["http-nio-8082"]
+[31m[WARN ][0;39m [36m2025-04-06 14:28:05.140[0;39m : [32m[org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:635][0;39m - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+[34m[INFO ][0;39m [36m2025-04-06 14:28:05.148[0;39m : [32m[org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger:82][0;39m - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[1;31m[ERROR][0;39m [36m2025-04-06 14:28:05.157[0;39m : [32m[org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:40][0;39m - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+[34m[INFO ][0;39m [36m2025-04-06 14:28:13.725[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:53][0;39m - Starting LikeLionSampleApplication using Java 21.0.3 with PID 25066 (/Users/yeonghakseo/Documents/workspace/likelion-project/likelion-backend/build/classes/java/main started by yeonghakseo in /Users/yeonghakseo/Documents/workspace/likelion-project/likelion-backend)
+[34m[INFO ][0;39m [36m2025-04-06 14:28:13.726[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:652][0;39m - No active profile set, falling back to 1 default profile: "default"
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.190[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.TomcatWebServer:111][0;39m - Tomcat initialized with port 8082 (http)
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.197[0;39m : [32m[org.apache.coyote.http11.Http11NioProtocol:173][0;39m - Initializing ProtocolHandler ["http-nio-8082"]
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.198[0;39m : [32m[org.apache.catalina.core.StandardService:173][0;39m - Starting service [Tomcat]
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.198[0;39m : [32m[org.apache.catalina.core.StandardEngine:173][0;39m - Starting Servlet engine: [Apache Tomcat/10.1.36]
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.219[0;39m : [32m[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173][0;39m - Initializing Spring embedded WebApplicationContext
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.219[0;39m : [32m[org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:301][0;39m - Root WebApplicationContext: initialization completed in 476 ms
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.308[0;39m : [32m[org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping:59][0;39m - Adding welcome page template: index
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.424[0;39m : [32m[org.apache.coyote.http11.Http11NioProtocol:173][0;39m - Starting ProtocolHandler ["http-nio-8082"]
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.432[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.TomcatWebServer:243][0;39m - Tomcat started on port 8082 (http) with context path '/'
+[34m[INFO ][0;39m [36m2025-04-06 14:28:14.437[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:59][0;39m - Started LikeLionSampleApplication in 0.994 seconds (process running for 1.349)
+[34m[INFO ][0;39m [36m2025-04-06 14:29:13.415[0;39m : [32m[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[34m[INFO ][0;39m [36m2025-04-06 14:29:13.415[0;39m : [32m[org.springframework.web.servlet.DispatcherServlet:532][0;39m - Initializing Servlet 'dispatcherServlet'
+[34m[INFO ][0;39m [36m2025-04-06 14:29:13.426[0;39m : [32m[org.springframework.web.servlet.DispatcherServlet:554][0;39m - Completed initialization in 11 ms
+[34m[INFO ][0;39m [36m2025-04-06 14:29:13.446[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.controller.ThreadTestController:19][0;39m - hello
+[34m[INFO ][0;39m [36m2025-04-06 14:29:13.447[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadService:36][0;39m - executing Async Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:13.448[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:14.451[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:15.456[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:16.459[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:17.460[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:18.462[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:19.467[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:20.473[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:21.477[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 14:29:22.483[0;39m : [32m[com.inspire12.likelionbackend.module.core.thread.service.ThreadAsyncService:15][0;39m - executing Thread Name .. [http-nio-8082-exec-1]
+[34m[INFO ][0;39m [36m2025-04-06 15:00:20.864[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.GracefulShutdown:54][0;39m - Commencing graceful shutdown. Waiting for active requests to complete
+[34m[INFO ][0;39m [36m2025-04-06 15:00:20.871[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.GracefulShutdown:76][0;39m - Graceful shutdown complete

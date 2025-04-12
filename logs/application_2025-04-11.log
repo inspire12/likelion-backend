@@ -1,0 +1,174 @@
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.167[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:53][0;39m - Starting LikeLionSampleApplication using Java 21.0.3 with PID 55968 (/Users/yeonghakseo/Documents/workspace/likelion-project/likelion-backend/build/classes/java/main started by yeonghakseo in /Users/yeonghakseo/Documents/workspace/likelion-project/likelion-backend)
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.168[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:652][0;39m - No active profile set, falling back to 1 default profile: "default"
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.583[0;39m : [32m[org.springframework.data.repository.config.RepositoryConfigurationDelegate:143][0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.598[0;39m : [32m[org.springframework.data.repository.config.RepositoryConfigurationDelegate:211][0;39m - Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.880[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.TomcatWebServer:111][0;39m - Tomcat initialized with port 8082 (http)
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.887[0;39m : [32m[org.apache.coyote.http11.Http11NioProtocol:173][0;39m - Initializing ProtocolHandler ["http-nio-8082"]
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.888[0;39m : [32m[org.apache.catalina.core.StandardService:173][0;39m - Starting service [Tomcat]
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.888[0;39m : [32m[org.apache.catalina.core.StandardEngine:173][0;39m - Starting Servlet engine: [Apache Tomcat/10.1.36]
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.910[0;39m : [32m[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173][0;39m - Initializing Spring embedded WebApplicationContext
+[34m[INFO ][0;39m [36m2025-04-11 15:15:25.910[0;39m : [32m[org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:301][0;39m - Root WebApplicationContext: initialization completed in 720 ms
+[34m[INFO ][0;39m [36m2025-04-11 15:15:26.003[0;39m : [32m[org.hibernate.jpa.internal.util.LogHelper:31][0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+[34m[INFO ][0;39m [36m2025-04-11 15:15:26.033[0;39m : [32m[org.hibernate.Version:44][0;39m - HHH000412: Hibernate ORM core version 6.6.8.Final
+[34m[INFO ][0;39m [36m2025-04-11 15:15:26.051[0;39m : [32m[org.hibernate.cache.internal.RegionFactoryInitiator:50][0;39m - HHH000026: Second-level cache disabled
+[34m[INFO ][0;39m [36m2025-04-11 15:15:26.225[0;39m : [32m[org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo:87][0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+[34m[INFO ][0;39m [36m2025-04-11 15:15:26.244[0;39m : [32m[com.zaxxer.hikari.HikariDataSource:109][0;39m - HikariPool-1 - Starting...
+[31m[WARN ][0;39m [36m2025-04-11 15:15:27.310[0;39m : [32m[org.hibernate.engine.jdbc.spi.SqlExceptionHelper:145][0;39m - SQL Error: 0, SQLState: 08S01
+[1;31m[ERROR][0;39m [36m2025-04-11 15:15:27.310[0;39m : [32m[org.hibernate.engine.jdbc.spi.SqlExceptionHelper:150][0;39m - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+[31m[WARN ][0;39m [36m2025-04-11 15:15:27.312[0;39m : [32m[org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator:389][0;39m - HHH000342: Could not obtain connection to query metadata
+org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.inspire12.likelionbackend.LikeLionSampleApplication.main(LikeLionSampleApplication.java:13)
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:837)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:420)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	... 35 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:79)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:142)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:961)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825)
+	... 48 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:144)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:53)
+	... 51 common frames omitted
+[1;31m[ERROR][0;39m [36m2025-04-11 15:15:27.314[0;39m : [32m[org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:436][0;39m - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+[31m[WARN ][0;39m [36m2025-04-11 15:15:27.315[0;39m : [32m[org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext:635][0;39m - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+[34m[INFO ][0;39m [36m2025-04-11 15:15:27.318[0;39m : [32m[org.apache.catalina.core.StandardService:173][0;39m - Stopping service [Tomcat]
+[34m[INFO ][0;39m [36m2025-04-11 15:15:27.331[0;39m : [32m[org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger:82][0;39m - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[1;31m[ERROR][0;39m [36m2025-04-11 15:15:27.339[0;39m : [32m[org.springframework.boot.SpringApplication:857][0;39m - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.inspire12.likelionbackend.LikeLionSampleApplication.main(LikeLionSampleApplication.java:13)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	... 15 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:181)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:392)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 30 common frames omitted
+[34m[INFO ][0;39m [36m2025-04-11 15:16:26.780[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:53][0;39m - Starting LikeLionSampleApplication using Java 21.0.3 with PID 56397 (/Users/yeonghakseo/Documents/workspace/likelion-project/likelion-backend/build/classes/java/main started by yeonghakseo in /Users/yeonghakseo/Documents/workspace/likelion-project/likelion-backend)
+[34m[INFO ][0;39m [36m2025-04-11 15:16:26.782[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:652][0;39m - No active profile set, falling back to 1 default profile: "default"
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.387[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.TomcatWebServer:111][0;39m - Tomcat initialized with port 8082 (http)
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.395[0;39m : [32m[org.apache.coyote.http11.Http11NioProtocol:173][0;39m - Initializing ProtocolHandler ["http-nio-8082"]
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.396[0;39m : [32m[org.apache.catalina.core.StandardService:173][0;39m - Starting service [Tomcat]
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.397[0;39m : [32m[org.apache.catalina.core.StandardEngine:173][0;39m - Starting Servlet engine: [Apache Tomcat/10.1.36]
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.417[0;39m : [32m[org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:173][0;39m - Initializing Spring embedded WebApplicationContext
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.417[0;39m : [32m[org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:301][0;39m - Root WebApplicationContext: initialization completed in 609 ms
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.507[0;39m : [32m[org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping:59][0;39m - Adding welcome page template: index
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.642[0;39m : [32m[org.apache.coyote.http11.Http11NioProtocol:173][0;39m - Starting ProtocolHandler ["http-nio-8082"]
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.651[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.TomcatWebServer:243][0;39m - Tomcat started on port 8082 (http) with context path '/'
+[34m[INFO ][0;39m [36m2025-04-11 15:16:27.657[0;39m : [32m[com.inspire12.likelionbackend.LikeLionSampleApplication:59][0;39m - Started LikeLionSampleApplication in 1.258 seconds (process running for 1.692)
+[34m[INFO ][0;39m [36m2025-04-11 15:16:46.794[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.GracefulShutdown:54][0;39m - Commencing graceful shutdown. Waiting for active requests to complete
+[34m[INFO ][0;39m [36m2025-04-11 15:16:46.814[0;39m : [32m[org.springframework.boot.web.embedded.tomcat.GracefulShutdown:76][0;39m - Graceful shutdown complete

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ViewController {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
-    @GetMapping
+
+
+    @GetMapping({"", "/", "/{path:^(?!api$).*$}/**"})
     public String index() {
         log.info("index view");
         return "index";
