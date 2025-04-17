@@ -3,8 +3,11 @@ package com.inspire12.likelionbackend.module.order.presentation.controller;
 import com.inspire12.likelionbackend.module.order.application.dto.OrderRequest;
 import com.inspire12.likelionbackend.module.order.application.dto.OrderResponse;
 import com.inspire12.likelionbackend.module.order.application.service.OrderService;
+import com.inspire12.likelionbackend.module.order.domain.constant.OrderStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 
 @RequestMapping(path = "/order")
@@ -22,6 +25,14 @@ public class OrderController {
     public ResponseEntity<String> testDeploy() {
         return ResponseEntity.ok("Deployment test");
     }
+
+    @GetMapping("/sample")
+    public ResponseEntity<OrderResponse> getSampleOrder() {
+
+        OrderResponse build = OrderResponse.builder().orderNumber(UUID.randomUUID()).orderStatus(OrderStatus.PENDING_PAYMENT).build();
+        return ResponseEntity.ok(build);
+    }
+
 
 
     @GetMapping

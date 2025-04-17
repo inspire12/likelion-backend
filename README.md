@@ -1,6 +1,7 @@
+# likelion Backend
 
-# Spring 초기 프로젝트 
-# by inspire12
+## Spring 초기 프로젝트 
+
 ## CI/CD
 
 # Spring 구성 요소 확인하기
@@ -9,8 +10,3 @@
 
 ## ThreadLocal
 
-# 엘라스틱 서치 너무 어려워
-
-# 그래도 어떻게든 되겠지
-
-# 그래도 어떻게든 되긴 했다
