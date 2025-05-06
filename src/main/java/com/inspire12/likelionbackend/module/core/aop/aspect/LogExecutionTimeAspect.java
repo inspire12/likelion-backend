@@ -24,6 +24,6 @@ public class LogExecutionTimeAspect {
         long startTime = System.currentTimeMillis();
         long endTime = System.currentTimeMillis();
         log.info("사용자 등록 완료 - username: {} {}", username, endTime - startTime);
-        return proceed;
+        return joinPoint;
     }
 }
