@@ -40,3 +40,9 @@ out/
 infra/mysql/**
 logs/**
 *.log
+
+
+**/grafana-data/**
+**/prometheus-data/**
+**/loki-data/**
+**.log

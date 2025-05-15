@@ -1,37 +1,30 @@
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--<configuration>-->
-<!--    &lt;!&ndash; 로그파일 저장 경로 &ndash;&gt;-->
-<!--    <appender class="ch.qos.logback.core.ConsoleAppender" name="CONSOLE">-->
-<!--        <layout class="ch.qos.logback.classic.PatternLayout">-->
-<!--            <Pattern>-->
-<!--                %highlight([%-5level]) %cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) : [%thread] %green([%logger:%line]) - %msg%n-->
-<!--            </Pattern>-->
-<!--        </layout>-->
-<!--    </appender>-->
-<!--    &lt;!&ndash; CONSOLE &ndash;&gt;-->
-<!--    <appender class="net.logstash.logback.appender.LogstashTcpSocketAppender" name="logstash">-->
-<!--        <destination>localhost:5000</destination>-->
-<!--        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>-->
-<!--    </appender>-->
-<!--    &lt;!&ndash;     FILE 저장&ndash;&gt;-->
-<!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
-<!--        <file>${LOG_DIR}/application.log</file>-->
-<!--        <layout class="ch.qos.logback.classic.PatternLayout">-->
-<!--            <Pattern>-->
-<!--                %highlight([%-5level]) %cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) : %green([%logger:%line]) - %msg%n-->
-<!--            </Pattern>-->
-<!--        </layout>-->
-<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
-<!--            <fileNamePattern>${LOG_DIR}/application.log.%d{yyyy-MM-dd}</fileNamePattern>-->
-<!--            <maxHistory>10</maxHistory>-->
-<!--        </rollingPolicy>-->
-<!--    </appender>-->
-<!--    <logger level="INFO" name="org.hibernate.SQL"/>-->
-<!--    <property name="LOG_DIR" value="./logs/application-%d{yyyy-MM-dd-HH-mm}.%i.log" />-->
-<!--    <root level="INFO">-->
-<!--        &lt;!&ndash;    <appender-ref ref="FILE" />&ndash;&gt;-->
-<!--        <appender-ref ref="CONSOLE"/>-->
-<!--        <appender-ref ref="FILE"/>-->
-<!--        <appender-ref ref="logstash"/>-->
-<!--    </root>-->
-<!--</configuration>-->
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} trace_id=%X{traceId:-} span_id=%X{spanId:-} trace_flags=%X{traceFlags:-} %p --- %m%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="FILE_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/spring.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/spring-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} trace_id=%X{traceId:-} span_id=%X{spanId:-} trace_flags=%X{traceFlags:-} %p --- %m%n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE_APPENDER"/>
+    </root>
+</configuration>

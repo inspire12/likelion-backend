@@ -1,0 +1,32 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml  # 로그 수집 위치 저장용 파일
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push  # Loki 주소 (docker-compose 서비스 이름으로 연결)
+
+scrape_configs:
+  - job_name: nginx-logs
+    static_configs:
+      - targets:
+          - host.docker.internal
+        labels:
+          job: nginx
+          host: nginx
+          __path__: /var/log/nginx/*.log
+
+  - job_name: spring-logs
+    static_configs:
+      - targets:
+          - host.docker.internal:8082
+        labels:
+          compose_service: spring-app
+          job: spring
+          host: localhost:q
+          __path__: /var/log/spring-app/*.log
+    pipeline_stages:
+      - multiline:
+          firstline: '^\d{4}-\d{2}-\d{2}'

@@ -17,10 +17,7 @@ spring:
         format_sql: true
 
 logging:
-  pattern:
-    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%thread] [%logger{36}] - %msg%n"
-#    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%thread] [%logger{36}] - %msg%n"
-    console: "%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) %highlight(%-5level) %yellow([%thread]) %green(%logger{36}) - %msg%n"
+  config: classpath:logback/logback-spring.xml
 management:
   endpoints:
     web:
@@ -28,7 +25,7 @@ management:
         include: '*'
   metrics:
     tags:
-      application: app
+      application: likelion-backend-1
     distribution:
       percentiles-histogram:
         http:

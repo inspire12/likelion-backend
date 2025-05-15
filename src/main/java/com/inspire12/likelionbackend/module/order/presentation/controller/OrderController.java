@@ -33,6 +33,12 @@ public class OrderController {
         return ResponseEntity.ok(build);
     }
 
+    @GetMapping("/error")
+    public ResponseEntity<OrderResponse> getError() {
+
+        OrderResponse build = OrderResponse.builder().orderNumber(UUID.randomUUID()).orderStatus(OrderStatus.PENDING_PAYMENT).build();
+        return ResponseEntity.internalServerError().build();
+    }
 
 
     @GetMapping
