@@ -3,6 +3,7 @@ package com.inspire12.likelionbackend.module.mvc.controller;
 import com.inspire12.likelionbackend.module.mvc.model.Customer;
 import com.inspire12.likelionbackend.module.mvc.model.OrderRequest;
 import com.inspire12.likelionbackend.module.mvc.model.OrderResponse;
+import com.inspire12.likelionbackend.module.mvc.service.DataService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,14 +14,25 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 
 
-@RequestMapping(("/rest"))
+@RequestMapping(("/api/v1"))
 @RestController
 public class DataController { // 뜬금 질문, 제가 왜 클래스명을 RestController 로 만들었을까요?
 
     private Logger log = LoggerFactory.getLogger(this.getClass().getName());
+    private final DataService dataService;
+
+    public DataController(DataService dataService) {
+        this.dataService = dataService;
+    }
+
+    @GetMapping("/order/{username}")
+    public ResponseEntity<OrderResponse> getOrder() {
+        dataService.getData();
+        return ResponseEntity.ok().build();
+    }
 
     @PostMapping("/order/{username}")
-    public ResponseEntity<OrderResponse> getOrder(@RequestParam Long id, @PathVariable String username,
+    public ResponseEntity<OrderResponse> testOrder(@RequestParam Long id, @PathVariable String username,
                                                  @RequestBody OrderRequest orderRequest,
                                                  @RequestHeader HttpHeaders headers,
                                                  @RequestHeader("user-id") Long userId,
