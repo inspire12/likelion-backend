@@ -40,3 +40,6 @@ out/
 infra/mysql/**
 logs/**
 *.log
+
+**/loki-data/**
+**/data/**
