@@ -1,0 +1,31 @@
+# 백엔드 앱을 배포하는 Deployment 리소스
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: likelion-backend
+  namespace: inspire12
+spec:
+  replicas: 1  # 파드 복제 수 (1개만 실행)
+  selector:
+    matchLabels:
+      app: likelion-backend  # 아래 template과 연결될 label
+  template:
+    metadata:
+      labels:
+        app: likelion-backend
+    spec:
+      containers:
+        - name: backend
+          image: localhost:5000/likelion-backend:0.0.1  # 로컬 레지스트리에 빌드된 Spring 앱 이미지
+          ports:
+            - containerPort: 8080  # 앱 내부에서 열리는 포트
+          env:
+            - name: PORT
+              value: "8080"  # Spring Boot에서 사용하는 포트 환경변수
+          resources:
+            requests:
+              memory: "256Mi"  # 최소 할당 메모리
+              cpu: "250m"      # 최소 할당 CPU
+            limits:
+              memory: "512Mi"  # 최대 사용 가능 메모리
+              cpu: "500m"      # 최대 사용 가능 CPU

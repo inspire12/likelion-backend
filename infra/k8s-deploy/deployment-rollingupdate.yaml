@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: likelion-backend
+  namespace: inspire12
+spec:
+  replicas: 3  # 총 3개의 파드를 유지하도록 설정 (확장성과 부하 분산 목적)
+
+  # 🔁 Rolling Update 전략 (무중단 배포)
+  strategy:
+    type: RollingUpdate  # 배포 방식 지정: RollingUpdate (기본값)
+    rollingUpdate:
+      maxSurge: 1         # 새 파드를 몇 개까지 추가로 만들 수 있는지 (총 4개까지 허용됨)
+      maxUnavailable: 1   # 배포 중 일시적으로 내려갈 수 있는 파드 수 (최소 2개는 살아있음)
+
+  # 파드 선택 기준: 아래 template과 selector의 label이 반드시 일치해야 함
+  selector:
+    matchLabels:
+      app: likelion-backend
+
+  # 실제로 실행될 파드의 정의
+  template:
+    metadata:
+      labels:
+        app: likelion-backend  # 서비스와 연결되는 기준 label
+
+    spec:
+      containers:
+        - name: backend
+          image: localhost:5000/likelion-backend:0.0.2  # 버전 바꾸면 새 이미지로 rolling update 실행됨
+          ports:
+            - containerPort: 8080  # 컨테이너 내부에서 열리는 포트 (서비스의 targetPort와 연결됨)
+
+          env:
+            - name: PORT
+              value: "8080"  # Spring Boot에서 사용하는 server.port 설정용 환경변수
+
+          resources:
+            requests:
+              memory: "256Mi"  # 최소 보장 메모리 (스케줄링 기준)
+              cpu: "250m"      # 최소 보장 CPU
+            limits:
+              memory: "512Mi"  # 최대 허용 메모리
+              cpu: "500m"      # 최대 허용 CPU
